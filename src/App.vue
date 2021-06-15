@@ -1,30 +1,106 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="app flex">
+    <Navigation />
+    <div class="app-content flex flex-column">
+      <router-view />
+    </div>
   </div>
-  <router-view/>
 </template>
 
+<script>
+import Navigation from "@/components/Navigation.vue";
+
+export default {
+  components: { Navigation },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background-color: #141625;
 }
 
-#nav {
-  padding: 30px;
+button,
+.button {
+  cursor: pointer;
+  padding: 16px 24px;
+  border-radius: 30px;
+  border: none;
+  font-size: 12px;
+  margin-right: 8px;
+  color: #fff;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.dark-purple {
+  background-color: #252945;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.red {
+  background-color: #ec5757;
+}
+
+.purple {
+  background-color: #7c5dfa;
+}
+
+.green {
+  background-color: #33d69f;
+}
+
+.orange {
+  background-color: #ff8f00;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 10px;
+  max-width: 850px;
+  margin: 0 auto;
+  @media (min-width: 900px) {
+    padding-top: 72px;
   }
+}
+
+.nav-link {
+  text-decoration: none;
+  color: initial;
+}
+
+.status-button {
+  &::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  font-size: 12px;
+  margin-right: 30px;
+  align-items: center;
+  padding: 8px 30px;
+  border-radius: 10px;
+}
+
+.paid {
+  &::before {
+    background-color: #33d69f;
+  }
+  color: #33d69f;
+  background-color: rgba(51, 214, 160, 0.1);
 }
 </style>
