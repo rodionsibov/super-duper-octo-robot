@@ -55,8 +55,8 @@ export default {
   @media (min-width: 900px) {
     flex-direction: row !important;
   }
-  
-  .app-conent {
+
+  .app-content {
     padding: 0 20px;
     flex: 1;
     position: relative;
@@ -70,6 +70,7 @@ export default {
   height: 100vh;
   background-color: #141625;
   color: #fff;
+  padding: 30px;
 
   p {
     margin-top: 16px;
