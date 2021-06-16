@@ -120,6 +120,7 @@ export default {
         cursor: pointer;
         font-size: 12px;
         padding: 10px 20px;
+        
         &:hover {
           color: #1e2139;
           background-color: #fff;
@@ -135,13 +136,13 @@ export default {
       .inner-button {
         margin-right: 8px;
         border-radius: 50%;
-        padding: 8px;
+        padding: 6px;
         align-items: center;
         justify-content: center;
         background-color: #fff;
 
         svg {
-          width: 10px;
+          width: 14px;
           color: #7c5dfa;
         }
       }
