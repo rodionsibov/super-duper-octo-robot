@@ -291,9 +291,78 @@ export default {
       }
 
       .work-items {
-          .item-list {
-              width: 100%;
+        .item-list {
+          width: 100%;
+
+          .table-heading,
+          .table-items {
+            gap: 16px;
+            font-size: 12px;
+
+            .item-name {
+              flex-basis: 50%;
+            }
+
+            .qty {
+              flex-basis: 10%;
+            }
+
+            .price {
+              flex-basis: 20%;
+            }
+
+            .total {
+              flex-basis: 20%;
+              align-self: center;
+            }
           }
+
+          .table-heading {
+            margin-bottom: 16px;
+
+            th {
+              text-align: left;
+            }
+          }
+
+          .table-items {
+            position: relative;
+            margin-bottom: 24px;
+
+            svg {
+              position: absolute;
+              top: 15px;
+              right: 0;
+              width: 12px;
+            }
+          }
+        }
+
+        .button {
+          color: #fff;
+          background-color: #252945;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+
+          svg {
+            margin-right: 4px;
+            width: 12px;
+            color: #7c5dfa;
+          }
+        }
+      }
+    }
+    
+    .save {
+      margin-top: 60px;
+
+      div {
+        flex: 1;
+      }
+
+      .right {
+        justify-content: flex-end;
       }
     }
   }

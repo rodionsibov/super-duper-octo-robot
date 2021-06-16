@@ -102,8 +102,9 @@ export default {
       margin-right: 40px;
 
       svg {
-        margin-left: 10px;
-        width: 10px;
+        margin-left: 8px;
+        width: 12px;
+        color: #7c5dfa;
       }
 
       .filter-menu {
@@ -120,7 +121,7 @@ export default {
         cursor: pointer;
         font-size: 12px;
         padding: 10px 20px;
-        
+
         &:hover {
           color: #1e2139;
           background-color: #fff;
