@@ -199,6 +199,8 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
   name: "InvoiceModal",
   data() {
@@ -224,6 +226,12 @@ export default {
       invoiceItemList: [],
       invoiceTotal: 0,
     };
+  },
+  methods: {
+    ...mapMutations(["toggleInvoice"]),
+    closeInvoice() {
+      this.toggleInvoice();
+    },
   },
 };
 </script>
@@ -353,7 +361,7 @@ export default {
         }
       }
     }
-    
+
     .save {
       margin-top: 60px;
 
