@@ -227,6 +227,14 @@ export default {
       invoiceTotal: 0,
     };
   },
+  created() {
+    // get current date for invoice date field
+    this.invoiceDateUnix = Date.now();
+    this.invoiceDate = new Date(this.invoiceDateUnix).toLocaleDateString(
+      "en-us",
+      { year: "numeric", month: "short", day: "numeric" }
+    );
+  },
   methods: {
     ...mapMutations(["toggleInvoice"]),
     closeInvoice() {
