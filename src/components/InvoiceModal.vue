@@ -205,6 +205,7 @@ export default {
   name: "InvoiceModal",
   data() {
     return {
+      dateOptions: { year: "numeric", month: "short", day: "numeric" },
       billerStreetAddress: null,
       billerCity: null,
       billerZipCode: null,
@@ -232,8 +233,19 @@ export default {
     this.invoiceDateUnix = Date.now();
     this.invoiceDate = new Date(this.invoiceDateUnix).toLocaleDateString(
       "en-us",
-      { year: "numeric", month: "short", day: "numeric" }
+      this.dateOptions
     );
+  },
+  watch: {
+    paymentTerms() {
+      const futureDate = new Date();
+      this.paymentDueDateUnix = futureDate.setDate(
+        futureDate.getDate() + parseInt(this.paymentTerms)
+      );
+      this.paymentDueDate = new Date(
+        this.paymentDueDateUnix
+      ).toLocaleDateString("en-us", this.dateOptions);
+    },
   },
   methods: {
     ...mapMutations(["toggleInvoice"]),
