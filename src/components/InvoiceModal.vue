@@ -200,6 +200,7 @@
 
 <script>
 import { mapMutations } from "vuex";
+import { v4 as uuidv4 } from "uuid";
 
 export default {
   name: "InvoiceModal",
@@ -251,6 +252,20 @@ export default {
     ...mapMutations(["toggleInvoice"]),
     closeInvoice() {
       this.toggleInvoice();
+    },
+    addNewInvoiceItem() {
+      this.invoiceItemList.push({
+        id: uuidv4(),
+        itemName: "",
+        qty: "",
+        price: 0,
+        total: 0,
+      });
+    },
+    deleteInvoiceItem(id) {
+      this.invoiceItemList = this.invoiceItemList.filter(
+        (item) => item.id !== id
+      );
     },
   },
 };
