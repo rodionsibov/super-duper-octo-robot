@@ -188,11 +188,17 @@
       </div>
       <div class="save flex">
         <div class="left">
-          <button @click="closeInvoice" class="red">Cancel</button>
+          <button type="button" @click="closeInvoice" class="red">
+            Cancel
+          </button>
         </div>
         <div class="right flex">
-          <button @click="saveDraft" class="dark-purple">Save Draft</button>
-          <button @click="publishInvoice" class="purple">Create Invoice</button>
+          <button type="submit" @click="saveDraft" class="dark-purple">
+            Save Draft
+          </button>
+          <button type="submit" @click="publishInvoice" class="purple">
+            Create Invoice
+          </button>
         </div>
       </div>
     </form>
@@ -254,7 +260,12 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(["toggleInvoice"]),
+    ...mapMutations(["toggleInvoice", "toggleModal"]),
+    checkClick(e) {
+      if(e.target === this.$refs.invoiceWrap) {
+        this.toggleModal()
+      }
+    },
     closeInvoice() {
       this.toggleInvoice();
     },
@@ -314,7 +325,7 @@ export default {
         invoiceDraft: this.invoiceDraft,
         invoiecePaid: null,
       });
-      this.loading = false
+      this.loading = false;
       this.toggleInvoice();
     },
     submitForm() {
