@@ -50,13 +50,20 @@
         </div>
       </div>
     </div>
+    <div>
+      <Invoice v-for="(invoice, index) in invoiceData" :key="index" />
+    </div>
   </div>
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import Invoice from '@/components/Invoice.vue'
+import { mapMutations, mapState } from "vuex";
 
 export default {
+  components: {
+    Invoice
+  },
   name: "Home",
   data() {
     return {
@@ -72,6 +79,9 @@ export default {
       this.filterMenu = !this.filterMenu;
     },
   },
+  computed: {
+    ...mapState(['invoiceData'])
+  }
 };
 </script>
 
