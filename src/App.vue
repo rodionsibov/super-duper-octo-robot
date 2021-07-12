@@ -183,4 +183,20 @@ button,
   color: #33d69f;
   background-color: rgba(51, 214, 160, 0.1);
 }
+
+.pending {
+  &::before {
+    background-color: #ff8f00;
+  }
+  color: #ff8f00;
+  background-color: rgba(255, 145, 0, 0.1);
+}
+
+.draft {
+  &::before {
+    background-color: #dfe3fa;
+  }
+  color: #dfe3fa;
+  background-color: rgba(223, 227, 250, 0.1);
+}
 </style>
