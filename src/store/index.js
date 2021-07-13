@@ -32,9 +32,9 @@ export default createStore({
           const data = {
             docId: doc.id,
             invoiceId: doc.data().invoiceId,
-            billerStreetAddress: doc.data().billerStreetAddressnull,
-            billerCity: doc.data().billerCitynull,
-            billerZipCode: doc.data().billerZipCodenull,
+            billerStreetAddress: doc.data().billerStreetAddress,
+            billerCity: doc.data().billerCity,
+            billerZipCode: doc.data().billerZipCode,
             billerCountry: doc.data().billerCountry,
             clientName: doc.data().clientName,
             clientEmail: doc.data().clientEmail,
